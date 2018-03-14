@@ -1,8 +1,6 @@
 package it.algoritmi.adt.tree;
 
-import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 
 import it.algoritmi.adt.Position;
 
@@ -240,36 +238,6 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> {
 		node.setLeft(null);
 		node.setParent(node);
 		return tmp;
-	}
-	
-	/**
-	 * Aggiunge a snapshot le posizioni del sottoalbero avente radice position.
-	 * @param position
-	 * @param snapshot
-	 */
-	private void preorderSubtree(Position<E> position, List<Position<E>> snapshot) {
-		snapshot.add(position);	// in pre-ordine, aggiungiamo position prima dei sottoalberi
-		for(Position<E> c : children(position))
-			preorderSubtree(c, snapshot);
-	}
-	
-	/**
-	 * Restituisce una lista delle posizioni dell'albero, in pre-ordine.
-	 * @return lista delle posizioni in pre-ordine
-	 */
-	protected Iterable<Position<E>> preorder() {
-		List<Position<E>> snapshot = new ArrayList<>();
-		if(!isEmpty()) preorderSubtree(root(), snapshot);	// riempe ricorsivamente snapshot
-		return snapshot;
-	}
-	
-	/**
-	 * Restituisce una lista delle posizioni dell'albero
-	 * @return lista delle posizioni.
-	 */
-	@Override
-	public Iterable<Position<E>> positions() {
-		return preorder();
 	}
 
 	//------------------ classe ElementIterator annidata ----------
