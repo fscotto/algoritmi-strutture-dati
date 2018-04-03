@@ -38,7 +38,7 @@ public abstract class AbstractPriorityQueue<K extends Comparable<K>, V> implemen
 	//-------- fine della classe annidata ------------------------
 
 	/** Il comparatore che definisce l'ordine tra le chiavi della coda prioritaria */
-	private Comparator<K> comparator;
+	protected Comparator<K> comparator;
 	
 	/** Crea una coda prioritaria vuota che usa il comparatore fornito. */
 	protected AbstractPriorityQueue(Comparator<K> comparator) {
