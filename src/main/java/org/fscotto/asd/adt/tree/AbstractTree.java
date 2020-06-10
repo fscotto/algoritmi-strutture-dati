@@ -12,17 +12,17 @@ import org.fscotto.asd.adt.Queue;
 public abstract class AbstractTree<E> implements Tree<E> {
 
 	@Override
-	public boolean isInternal(Position<E> position) throws IllegalArgumentException {
+	public boolean isInternal(Position<E> position) {
 		return numChildren(position) > 0;
 	}
 
 	@Override
-	public boolean isExternal(Position<E> position) throws IllegalArgumentException {
+	public boolean isExternal(Position<E> position) {
 		return numChildren(position) == 0;
 	}
 
 	@Override
-	public boolean isRoot(Position<E> position) throws IllegalArgumentException {
+	public boolean isRoot(Position<E> position) {
 		return position == root();
 	}
 

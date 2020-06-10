@@ -8,6 +8,6 @@ public interface Position<E> {
 	 * @return l'elemento memorizzato
 	 * @throws IllegalStateException se la posizione non è più valida
 	 */
-	E getElement() throws IllegalStateException;
+	E getElement();
 	
 }

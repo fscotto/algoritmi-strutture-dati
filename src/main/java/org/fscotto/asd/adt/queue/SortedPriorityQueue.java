@@ -28,7 +28,7 @@ public class SortedPriorityQueue<K extends Comparable<K>, V> extends AbstractPri
 	
 
 	@Override
-	public Entry<K, V> insert(K key, V value) throws IllegalArgumentException {
+	public Entry<K, V> insert(K key, V value) {
 		checkKey(key); // metodo ausiliario di verifica (può lanciare eccezione)
 		Entry<K, V> newest = new PQEntry<>(key, value);
 		Position<Entry<K, V>> walk = list.last();

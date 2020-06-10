@@ -73,7 +73,7 @@ public class HeapAdaptablePriorityQueue<K extends Comparable<K>, V> extends Heap
 	
 	/** Inserisce una coppia chiave-valore e restituisce la voce creata. */
 	@Override
-	public Entry<K, V> insert(K key, V value) throws IllegalArgumentException {
+	public Entry<K, V> insert(K key, V value) {
 		checkKey(key);
 		Entry<K, V> newest = new AdaptablePQEntry<K, V>(key, value, heap.size());
 		heap.add(newest);
@@ -84,7 +84,7 @@ public class HeapAdaptablePriorityQueue<K extends Comparable<K>, V> extends Heap
 	/** Elimina dalla coda prioritaria la voce ricevuta. */
 
 	@Override
-	public void remove(Entry<K, V> entry) throws IllegalArgumentException {
+	public void remove(Entry<K, V> entry) {
 		AdaptablePQEntry<K, V> locator = validate(entry);
 		int j = locator.getIndex();
 		if (j == heap.size() - 1)			// la voce si trova nell'ultima posizione
@@ -98,7 +98,7 @@ public class HeapAdaptablePriorityQueue<K extends Comparable<K>, V> extends Heap
 
 	/** Sostituisce la chiave di una voce. */
 	@Override
-	public void replaceKey(Entry<K, V> entry, K key) throws IllegalArgumentException {
+	public void replaceKey(Entry<K, V> entry, K key) {
 		AdaptablePQEntry<K, V> locator = validate(entry);
 		checkKey(key);
 		locator.setKey(key);
@@ -107,7 +107,7 @@ public class HeapAdaptablePriorityQueue<K extends Comparable<K>, V> extends Heap
 
 	/** Sostituisce il valore di una voce. */
 	@Override
-	public void replaceValue(Entry<K, V> entry, V value) throws IllegalArgumentException {
+	public void replaceValue(Entry<K, V> entry, V value) {
 		AdaptablePQEntry<K, V> locator = validate(entry);
 		locator.setValue(value);
 	}

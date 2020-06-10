@@ -41,7 +41,7 @@ public class LinkedPositionalList<E> implements PositionalList<E> {
 		}
 
 		@Override
-		public E getElement() throws IllegalStateException {
+		public E getElement() {
 			if(next == null) throw new IllegalStateException("Position no longer valid");
 			return element;
 		}
@@ -119,7 +119,7 @@ public class LinkedPositionalList<E> implements PositionalList<E> {
 	 * Restituisce la Position che precede p (o null, se p è la prima).
 	 */
 	@Override
-	public Position<E> before(Position<E> position) throws IllegalArgumentException {
+	public Position<E> before(Position<E> position) {
 		Node<E> node = validate(position);
 		return position(node.getPrev());
 	}
@@ -128,7 +128,7 @@ public class LinkedPositionalList<E> implements PositionalList<E> {
 	 * Restituisce la Posizione che segue p (o null, se p è l'ultima).
 	 */
 	@Override
-	public Position<E> after(Position<E> position) throws IllegalArgumentException {
+	public Position<E> after(Position<E> position) {
 		Node<E> node = validate(position);
 		return position(node.getNext());
 	}
@@ -173,7 +173,7 @@ public class LinkedPositionalList<E> implements PositionalList<E> {
 	 * ne restituisce la posizione.
 	 */
 	@Override
-	public Position<E> addBefore(Position<E> position, E element) throws IllegalArgumentException {
+	public Position<E> addBefore(Position<E> position, E element) {
 		Node<E> node = validate(position);
 		return addBeetween(element, node.getPrev(), node);
 	}
@@ -183,7 +183,7 @@ public class LinkedPositionalList<E> implements PositionalList<E> {
 	 * ne restituisce la posizione.
 	 */
 	@Override
-	public Position<E> addAfter(Position<E> position, E element) throws IllegalArgumentException {
+	public Position<E> addAfter(Position<E> position, E element) {
 		Node<E> node = validate(position);
 		return addBeetween(element, node, node.getNext());
 	}
@@ -193,7 +193,7 @@ public class LinkedPositionalList<E> implements PositionalList<E> {
 	 * restituisce l'elemento sostituito.
 	 */
 	@Override
-	public E set(Position<E> position, E element) throws IllegalArgumentException {
+	public E set(Position<E> position, E element) {
 		Node<E> node = validate(position);
 		E answer = node.getElement();
 		node.setElement(element);
@@ -204,7 +204,7 @@ public class LinkedPositionalList<E> implements PositionalList<E> {
 	 * Elimina e restituisce l'elemento nella Position p (poi p non è più valida).
 	 */
 	@Override
-	public E remove(Position<E> position) throws IllegalArgumentException {
+	public E remove(Position<E> position) {
 		Node<E> node = validate(position);
 		Node<E> predecessor = node.getPrev();
 		Node<E> successor = node.getNext();

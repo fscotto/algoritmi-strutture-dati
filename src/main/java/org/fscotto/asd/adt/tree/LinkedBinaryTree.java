@@ -79,7 +79,7 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> {
 	 * @return figlio sinistro o null se non c'è
 	 */
 	@Override
-	public Position<E> left(Position<E> position) throws IllegalArgumentException {
+	public Position<E> left(Position<E> position) {
 		Node<E> node = validate(position);
 		return node.getLeft();
 	}
@@ -91,7 +91,7 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> {
 	 * @return figlio destro o null se non c'è
 	 */
 	@Override
-	public Position<E> right(Position<E> position) throws IllegalArgumentException {
+	public Position<E> right(Position<E> position) {
 		Node<E> node = validate(position);
 		return node.getRight();
 	}
@@ -112,7 +112,7 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> {
 	 * @return posizione di position o null se è radice
 	 */
 	@Override
-	public Position<E> parent(Position<E> position) throws IllegalArgumentException {
+	public Position<E> parent(Position<E> position) {
 		Node<E> node = validate(position);
 		return node.getParent();
 	}

@@ -49,7 +49,7 @@ public class ArrayList<E> implements List<E> {
 	 * senza eliminarlo.
 	 */
 	@Override
-	public E get(int i) throws IndexOutOfBoundsException {
+	public E get(int i) {
 		checkIndex(i, size);
 		return data[i];
 	}
@@ -59,7 +59,7 @@ public class ArrayList<E> implements List<E> {
 	 * restituisce l'elemento sostituito.
 	 */
 	@Override
-	public E set(int i, E e) throws IndexOutOfBoundsException {
+	public E set(int i, E e) {
 		checkIndex(i, size);
 		E tmp = data[i];
 		data[i] = e;
@@ -71,7 +71,7 @@ public class ArrayList<E> implements List<E> {
 	 * spostando gli elementi successivi.
 	 */
 	@Override
-	public void add(int i, E e) throws IndexOutOfBoundsException {
+	public void add(int i, E e) {
 		checkIndex(i, size + 1);
 		if(size == data.length) resize(2 * data.length);
 		for(int k = size - 1; k >= i; --k) data[k + 1] = data[k];
@@ -84,7 +84,7 @@ public class ArrayList<E> implements List<E> {
 	 * spostando i successivi.
 	 */
 	@Override
-	public E remove(int i) throws IndexOutOfBoundsException {
+	public E remove(int i) {
 		checkIndex(i, size);
 		E tmp = data[i];
 		for(int k = i; k <= size-1; ++k) data[k] = data[k + 1];

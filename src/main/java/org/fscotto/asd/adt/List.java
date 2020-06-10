@@ -10,15 +10,15 @@ public interface List<E> extends Iterable<E> {
 	boolean isEmpty();
 	
 	/** Restituisce l'elemento corristondente all'indice i, senza eliminarlo. */
-	E get(int i) throws IndexOutOfBoundsException;
+	E get(int i);
 	
 	/** Sostituisce con e l'elemento di indice i; restituisce l'elemento sostituito. */
-	E set(int i, E e) throws IndexOutOfBoundsException;
+	E set(int i, E e);
 	
 	/** Inserisce e come elemento di indice i, spostando gli elementi successivi. */
-	void add(int i, E e) throws IndexOutOfBoundsException;
+	void add(int i, E e);
 	
 	/** Rimuove e restituisce l'elemento di indice i, spostando i successivi. */
-	E remove(int i) throws IndexOutOfBoundsException;
+	E remove(int i);
 	
 }
